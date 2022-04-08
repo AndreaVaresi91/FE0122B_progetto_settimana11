@@ -1,13 +1,37 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "3e411970-5b73-4a71-b9c5-c590d66e8bc2"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Progetto-settimana-11": {
+    "movies": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "strict": true
@@ -20,7 +44,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/progetto-settimana-11",
+            "outputPath": "dist/movies",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Progetto-settimana-11:build:production"
+              "browserTarget": "movies:build:production"
             },
             "development": {
-              "browserTarget": "Progetto-settimana-11:build:development"
+              "browserTarget": "movies:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +107,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Progetto-settimana-11:build"
+            "browserTarget": "movies:build"
           }
         },
         "test": {
@@ -107,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "Progetto-settimana-11"
+  "defaultProject": "movies"
 }
